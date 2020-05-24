@@ -20,7 +20,6 @@ brew 'jq'
 brew 'fzf'
 brew 'diff-so-fancy'
 brew 'hugo'
-
 brew 'asciinema'
 
 cask 'dotnet-sdk'
@@ -41,4 +40,3 @@ cask 'google-chrome'
 cask 'brave-browser'
 cask 'github'
 cask 'sourcetree'
-cask 'loom'

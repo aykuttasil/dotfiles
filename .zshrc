@@ -41,7 +41,7 @@ ZSH_THEME_RANDOM_CANDIDATES=("robbyrussell" "af-magic" "jbergantine" "jnrowe")
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="false"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -64,7 +64,7 @@ ZSH_THEME_RANDOM_CANDIDATES=("robbyrussell" "af-magic" "jbergantine" "jnrowe")
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git colored-man-pages docker docker-compose dotnet encode64 gitignore urltools)
+plugins=(git colored-man-pages docker docker-compose encode64 gitignore urltools)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -98,15 +98,15 @@ source $ZSH/oh-my-zsh.sh
 
 
 # Load custom functions
-if [[ -f "$HOME/workspace/dotfiles/zsh_functions.inc" ]]; then
-	source "$HOME/workspace/dotfiles/zsh_functions.inc"
+if [[ -f "$HOME/dotfiles/zsh_functions.inc" ]]; then
+	source "$HOME/dotfiles/zsh_functions.inc"
 else
 	echo >&2 "WARNING: can't load shell functions"
 fi
 
 # Load custom aliases
-if [[ -f "$HOME/workspace/dotfiles/zsh_aliases.inc" ]]; then
-	source "$HOME/workspace/dotfiles/zsh_aliases.inc"
+if [[ -f "$HOME/dotfiles/zsh_aliases.inc" ]]; then
+	source "$HOME/dotfiles/zsh_aliases.inc"
 else
 	echo >&2 "WARNING: can't load shell aliases"
 fi
@@ -150,10 +150,10 @@ fi
 
 # GCloud Configuration
 # The next line updates PATH for the Google Cloud SDK.
-if [ -f '/Users/aykutasil/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/aykutasil/google-cloud-sdk/path.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/path.zsh.inc" ]; then . "$HOME/google-cloud-sdk/path.zsh.inc"; fi
 
 # The next line enables shell command completion for gcloud.
-if [ -f '/Users/aykutasil/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/aykutasil/google-cloud-sdk/completion.zsh.inc'; fi
+if [ -f "$HOME/google-cloud-sdk/completion.zsh.inc" ]; then . "$HOME/google-cloud-sdk/completion.zsh.inc"; fi
 
 
 # python: replace system python
@@ -184,6 +184,7 @@ _dotnet_zsh_complete()
 }
 
 compctl -K _dotnet_zsh_complete dotnet
+PATH="$HOME/.dotnet/tools:$PATH"
 
 
 
