@@ -2,6 +2,8 @@ tap 'homebrew/bundle'
 tap 'homebrew/core'
 tap 'ldez/tap'
 tap 'buildpack/tap'
+tap 'teamookla/speedtest'
+
 cask_args appdir: "/Applications"
 
 brew 'bash-completion'
@@ -21,6 +23,7 @@ brew 'fzf'
 brew 'diff-so-fancy'
 brew 'hugo'
 brew 'asciinema'
+brew 'speedtest'
 
 cask 'dotnet-sdk'
 cask 'visual-studio'
@@ -40,3 +43,11 @@ cask 'google-chrome'
 cask 'brave-browser'
 cask 'github'
 cask 'sourcetree'
+cask 'iriunwebcam'
+cask 'whatsapp'
+cask 'telegram-desktop'
+cask 'discord
+cask 'postman'
+cask 'ngrok'
+cask 'google-backup-and-sync'
+cask 'cyberduck'
