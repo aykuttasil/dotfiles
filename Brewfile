@@ -27,6 +27,8 @@ brew 'speedtest'
 brew 'dive'
 brew 'gh'
 brew 'httpie'
+brew 'tldr'
+brew 'htop'
 
 cask 'dotnet-sdk'
 cask 'visual-studio'
