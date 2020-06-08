@@ -100,8 +100,9 @@ export CPPFLAGS="-I/$HOME/.homebrew/opt/openjdk/include"
 
 # Android Configuration
 PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
-PATH="$HOME/Library/Android/sdk/cmdline-tools/latest/bin:$PATH"
+PATH="$HOME/Library/Android/sdk/cmdline-tools/latest/tools/bin:$PATH"
 PATH="$HOME/Library/Android/sdk/emulator:$PATH"
+
 
 
 # zsh parameter completion for the dotnet CLI
