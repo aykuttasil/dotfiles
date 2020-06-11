@@ -14,6 +14,7 @@ alias dl="cd ~/Downloads"
 alias dt="cd ~/Desktop"
 alias w="cd ~/workspace"
 alias a2a="cd ~/workspace/a2a"
+alias aktif="cd ~/workspace/aktif"
 alias g="git"
 
 # IP addresses
