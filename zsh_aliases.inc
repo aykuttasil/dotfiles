@@ -117,3 +117,9 @@ alias youtube-dl='docker run --rm -i -t -v $PWD:/data vimagick/youtube-dl'
 alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
 
 alias gac='git status -s && git add . && git commit -m'
+
+
+## android stuff 
+# write package name 
+alias android_workmanagerdiagnostic='adb shell am broadcast -a "androidx.work.diagnostics.REQUEST_DIAGNOSTICS" -p' 
+alias android_dbdebug='adb forward tcp:8080 tcp:8080'
