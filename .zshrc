@@ -104,7 +104,6 @@ PATH="$HOME/Library/Android/sdk/cmdline-tools/latest/tools/bin:$PATH"
 PATH="$HOME/Library/Android/sdk/emulator:$PATH"
 
 
-
 # zsh parameter completion for the dotnet CLI
 _dotnet_zsh_complete()
 {
@@ -115,7 +114,6 @@ _dotnet_zsh_complete()
 
 compctl -K _dotnet_zsh_complete dotnet
 PATH="$HOME/.dotnet/tools:$PATH"
-
 
 
 export PATH
