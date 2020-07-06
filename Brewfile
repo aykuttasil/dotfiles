@@ -29,6 +29,8 @@ brew 'gh'
 brew 'httpie'
 brew 'tldr'
 brew 'htop'
+brew 'wifi-password'
+brew 'm-cli'
 
 cask 'dotnet-sdk'
 cask 'visual-studio'
