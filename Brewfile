@@ -32,7 +32,6 @@ brew 'htop'
 brew 'wifi-password'
 brew 'm-cli'
 
-
 cask 'dotnet-sdk'
 cask 'visual-studio'
 cask 'visual-studio-code'
