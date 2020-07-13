@@ -15,4 +15,3 @@ Run which brew to confirm the one in home directory is picked up.
 
 - `ln -f ~/.zshrc ~/dotfiles/.zshrc`
 
-
