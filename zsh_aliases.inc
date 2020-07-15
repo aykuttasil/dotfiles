@@ -112,7 +112,7 @@ alias db='docker build -t'
 
 alias ffmpeg='docker run --rm -i -t -v $PWD:/tmp/workdir jrottenberg/ffmpeg'
 alias youtube-dl='docker run --rm -i -t -v $PWD:/data vimagick/youtube-dl'
-alias brewup='brew update; brew upgrade; brew prune; brew cleanup; brew doctor'
+alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
 alias gac='git status -s && git add . && git commit -m'
 
 
