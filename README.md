@@ -4,10 +4,7 @@
 
 ## Package manager
 
-- Install Homebrew —to `$HOME/.homebrew` instead of `/usr/local:`
-
-- `git clone https://github.com/Homebrew/brew.git $HOME/.homebrew`
-Run which brew to confirm the one in home directory is picked up.
+- `git clone https://github.com/Homebrew/brew.git /usr/local`
 
 - Run `brew analytics off`
 
