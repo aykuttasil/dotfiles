@@ -99,10 +99,18 @@ export CPPFLAGS="-I/$HOME/.homebrew/opt/openjdk/include"
 
 
 # Android Configuration
-PATH="$HOME/Library/Android/sdk/platform-tools:$PATH"
-PATH="$HOME/Library/Android/sdk/cmdline-tools/latest/tools/bin:$PATH"
-PATH="$HOME/Library/Android/sdk/emulator:$PATH"
 
+# Path to Android SDK
+export ANDROID_HOME=$HOME/Library/Android/sdk
+# Path to Android platform tools (adb, fastboot, etc)
+export ANDROID_PLATFORM_TOOLS="$ANDROID_HOME/platform-tools"
+# Path to Android tools (aapt, apksigner, zipalign, etc)
+export ANDROID_TOOLS="$ANDROID_HOME/build-tools/30.0.2/"
+export ANDROID_CMDLINE="$ANDROID_HOME/cmdline-tools/latest/tools/bin"
+export ANDROID_EMULATOR="$ANDROID_HOME/emulator"
+
+# Add all to the path
+PATH="$PATH:$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS:$ANDROID_EMULATOR:$ANDROID_CMDLINE"
 
 # zsh parameter completion for the dotnet CLI
 _dotnet_zsh_complete()
