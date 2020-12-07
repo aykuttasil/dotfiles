@@ -120,3 +120,5 @@ alias gac='git status -s && git add . && git commit -m'
 # write package name 
 alias android_workmanagerdiagnostic='adb shell am broadcast -a "androidx.work.diagnostics.REQUEST_DIAGNOSTICS" -p' 
 alias android_dbdebug='adb forward tcp:8080 tcp:8080'
+
+alias startwindows='sudo -b /Applications/Parallels\ Desktop.app/Contents/MacOS/prl_client_app'
