@@ -65,14 +65,13 @@ alias map="xargs -n1"
 # Empty the Trash on all mounted volumes and the main HDD.
 # Also, clear Apple’s System Logs to improve shell startup speed.
 # Finally, clear download history from quarantine. https://mths.be/bum
-alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
+# alias emptytrash="sudo rm -rfv /Volumes/*/.Trashes; sudo rm -rfv ~/.Trash; sudo rm -rfv /private/var/log/asl/*.asl; sqlite3 ~/Library/Preferences/com.apple.LaunchServices.QuarantineEventsV* 'delete from LSQuarantineEvent'"
 
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
 # Get week number
 alias week='date +%V'
-
 
 
 # Detect which `ls` flavor is in use
@@ -112,13 +111,14 @@ alias db='docker build -t'
 
 alias ffmpeg='docker run --rm -i -t -v $PWD:/tmp/workdir jrottenberg/ffmpeg'
 alias youtube-dl='docker run --rm -i -t -v $PWD:/data vimagick/youtube-dl'
-alias brewup='brew update; brew upgrade; brew cleanup; brew doctor'
+alias brewup='brew update; brew upgrade; brew doctor'
 alias gac='git status -s && git add . && git commit -m'
 
 
-## android stuff 
+# Android stuff 
 # write package name 
 alias android_workmanagerdiagnostic='adb shell am broadcast -a "androidx.work.diagnostics.REQUEST_DIAGNOSTICS" -p' 
 alias android_dbdebug='adb forward tcp:8080 tcp:8080'
 
 alias startwindows='sudo -b /Applications/Parallels\ Desktop.app/Contents/MacOS/prl_client_app'
+alias qrcode='f() { curl https://qr.eletto.dev/$1. -o $1.png};f'
