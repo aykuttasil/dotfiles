@@ -121,4 +121,4 @@ alias android_workmanagerdiagnostic='adb shell am broadcast -a "androidx.work.di
 alias android_dbdebug='adb forward tcp:8080 tcp:8080'
 
 alias startwindows='sudo -b /Applications/Parallels\ Desktop.app/Contents/MacOS/prl_client_app'
-alias qrcode='f() { curl https://qr.eletto.dev/$1. -o $1.png};f'
+alias qrcode='f() { curl https://qr.eletto.dev/$1 -o $1.png};f'
