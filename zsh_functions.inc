@@ -152,14 +152,25 @@ function getcertnames() {
 	fi;
 }
 
-function gi() { curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;}
-	_gitignoreio_get_command_list() {
+function gi() { 
+	curl -sL https://www.toptal.com/developers/gitignore/api/$@ ;
+}
+_gitignoreio_get_command_list() {
 	curl -sL https://www.toptal.com/developers/gitignore/api/list | tr "," "\n"
-	}
-
-	_gitignoreio () {
+}
+_gitignoreio () {
 	compset -P '*,'
 	compadd -S '' `_gitignoreio_get_command_list`
 }
-
 compdef _gitignoreio gi
+
+# Create a new directory and enter it
+function mk() {
+  mkdir -p "$@" && cd "$@"
+}
+
+# Open man page as PDF
+function manpdf() {
+ man -t "${1}" | open -f -a /Applications/Preview.app/
+}
+
