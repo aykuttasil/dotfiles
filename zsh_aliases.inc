@@ -1,6 +1,6 @@
 # This script is sourced from .zshrc.
 
-# Easier navigation: .., ..., ...., ....., ~ and -
+# Easier navigation
 alias ..="cd .."
 alias ...="cd ../.."
 alias ....="cd ../../.."
@@ -13,7 +13,6 @@ alias w="cd ~/workspace"
 alias a2a="cd ~/workspace/a2a"
 alias aktif="cd ~/workspace/aktif"
 alias thinkerfox="cd ~/workspace/thinkerfox"
-alias g="git"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
@@ -21,7 +20,9 @@ alias localip="ipconfig getifaddr en0"
 alias ips="ifconfig -a | grep -o 'inet6\? \(addr:\)\?\s\?\(\(\([0-9]\+\.\)\{3\}[0-9]\+\)\|[a-fA-F0-9:]\+\)' | awk '{ sub(/inet6? (addr:)? ?/, \"\"); print }'"
 
 # Trim new lines and copy to clipboard
-alias c="tr -d '\n' | pbcopy"
+# alias c="tr -d '\n' | pbcopy"
+alias c='pbcopy'
+alias p='pbpaste'
 
 # Show/hide hidden files in Finder
 alias show="defaults write com.apple.finder AppleShowAllFiles -bool true && killall Finder"
@@ -32,12 +33,9 @@ alias hidedesktop="defaults write com.apple.finder CreateDesktop -bool false && 
 alias showdesktop="defaults write com.apple.finder CreateDesktop -bool true && killall Finder"
 
 
-# URL-encode strings
-alias urlencode='python -c "import sys, urllib as ul; print ul.quote_plus(sys.argv[1]);"'
-
 # Merge PDF files, preserving hyperlinks
 # Usage: `mergepdf input{1,2,3}.pdf`
-alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
+# alias mergepdf='gs -q -dNOPAUSE -dBATCH -sDEVICE=pdfwrite -sOutputFile=_merged.pdf'
 
 # Disable Spotlight
 alias spotoff="sudo mdutil -a -i off"
@@ -67,9 +65,6 @@ alias map="xargs -n1"
 # Recursively delete `.DS_Store` files
 alias cleanup="find . -type f -name '*.DS_Store' -ls -delete"
 
-# Get week number
-alias week='date +%V'
-
 
 # Detect which `ls` flavor is in use
 if ls --color > /dev/null 2>&1; then # GNU `ls`
@@ -92,12 +87,12 @@ alias lsd="ls -lF ${colorflag} | grep --color=never '^d'"
 # Always use color output for `ls`
 alias ls="command ls ${colorflag}"
 
-
-alias c='pbcopy'
-alias p='pbpaste'
+# VS Code
 alias c.='code .'
 alias code.='code .'
 
+# Git Stuff
+alias gac='git status -s && git add . && git commit -m'
 
 # cloud stuff
 alias d='docker'
@@ -105,15 +100,12 @@ alias dr='docker run --rm -i -t'
 alias dx='docker exec -i -t'
 alias db='docker build -t'
 
-
+# hmmm
 alias ffmpeg='docker run --rm -i -t -v $PWD:/tmp/workdir jrottenberg/ffmpeg'
 alias youtube-dl='docker run --rm -i -t -v $PWD:/data vimagick/youtube-dl'
 alias brewup='brew update; brew upgrade; brew doctor'
-alias gac='git status -s && git add . && git commit -m'
-
 
 # Android stuff 
-# write package name 
 alias android_workmanagerdiagnostic='adb shell am broadcast -a "androidx.work.diagnostics.REQUEST_DIAGNOSTICS" -p' 
 alias android_dbdebug='adb forward tcp:8080 tcp:8080'
 

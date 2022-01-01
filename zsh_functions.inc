@@ -2,12 +2,6 @@ log() {
   echo >&2 "[~/.zshrc] $(tput setaf 245)$*$(tput sgr0)"
 }
 
-brew() {
-  sudo chown -R "$(whoami)" /usr/local/bin /usr/local/etc /usr/local/sbin /usr/local/share /usr/local/share/doc
-  chmod u+w /usr/local/bin /usr/local/etc /usr/local/sbin /usr/local/share /usr/local/share/doc
-  command "brew" $@
-}
-
 # Create a new directory and enter it
 function mkd() {
 	mkdir -p "$@" && cd "$_";
@@ -168,9 +162,3 @@ compdef _gitignoreio gi
 function mk() {
   mkdir -p "$@" && cd "$@"
 }
-
-# Open man page as PDF
-function manpdf() {
- man -t "${1}" | open -f -a /Applications/Preview.app/
-}
-
