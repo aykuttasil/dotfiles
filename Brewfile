@@ -3,6 +3,7 @@ tap 'homebrew/core'
 tap 'ldez/tap'
 tap 'buildpack/tap'
 tap 'teamookla/speedtest'
+tap 'dart-lang/dart'
 
 cask_args appdir: "/Applications"
 
@@ -30,7 +31,7 @@ brew 'tldr'
 brew 'htop'
 brew 'wifi-password'
 brew 'm-cli'
-
+brew 'dart'
 
 cask 'visual-studio'
 cask 'visual-studio-code'

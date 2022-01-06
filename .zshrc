@@ -118,6 +118,8 @@ export ANDROID_EMULATOR="$ANDROID_HOME/emulator"
 # Add all to the path
 PATH="$PATH:$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS:$ANDROID_EMULATOR:$ANDROID_CMDLINE"
 
+# Flutter
+PATH="$PATH:$HOME/flutter/bin"
 
 
 # zsh parameter completion for the dotnet CLI
@@ -129,7 +131,7 @@ _dotnet_zsh_complete()
 }
 
 compctl -K _dotnet_zsh_complete dotnet
-PATH="$HOME/.dotnet/tools:$PATH"
+PATH="$PATH:$HOME/.dotnet/tools"
 
 
 export PATH
