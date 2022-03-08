@@ -32,6 +32,7 @@ brew 'htop'
 brew 'wifi-password'
 brew 'm-cli'
 brew 'dart'
+brew 'pyenv'
 
 cask 'visual-studio'
 cask 'visual-studio-code'

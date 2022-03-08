@@ -106,20 +106,30 @@ fi
 
 
 # Android Configuration
-
-# Path to Android SDK
 export ANDROID_HOME=$HOME/Library/Android/sdk
-# Path to Android platform tools (adb, fastboot, etc)
 export ANDROID_PLATFORM_TOOLS="$ANDROID_HOME/platform-tools"
-# Path to Android tools (aapt, apksigner, zipalign, etc)
 export ANDROID_TOOLS="$ANDROID_HOME/build-tools/32.0.0/"
 export ANDROID_CMDLINE="$ANDROID_HOME/cmdline-tools/latest/tools/bin"
 export ANDROID_EMULATOR="$ANDROID_HOME/emulator"
-# Add all to the path
+
 PATH="$PATH:$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS:$ANDROID_EMULATOR:$ANDROID_CMDLINE"
 
 # Flutter
 PATH="$PATH:$HOME/flutter/bin"
+
+# Dart
+PATH="$PATH":"$HOME/.pub-cache/bin"
+
+# Ruby
+#PATH="/opt/homebrew/opt/ruby/bin:$PATH"
+#export LDFLAGS="-L/opt/homebrew/opt/ruby/lib"
+#export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
+#export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
+
+if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
+  export PATH=`gem environment gemdir`/bin:$PATH
+fi
 
 
 # zsh parameter completion for the dotnet CLI
@@ -131,7 +141,11 @@ _dotnet_zsh_complete()
 }
 
 compctl -K _dotnet_zsh_complete dotnet
-PATH="$PATH:$HOME/.dotnet/tools"
+#PATH="$PATH:$HOME/.dotnet/tools"
+
+
+# pyenv for Python
+if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init -)"; fi
 
 
 export PATH
