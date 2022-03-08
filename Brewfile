@@ -55,6 +55,7 @@ cask 'postman'
 cask 'ngrok'
 cask 'spectacle'
 cask 'transmission'
+cask 'iglance'
 
 # cask 'cyberduck'
 # cask 'dotnet-sdk'
