@@ -56,6 +56,7 @@ cask 'ngrok'
 cask 'spectacle'
 cask 'transmission'
 cask 'iglance'
+cask 'you-get'
 
 # cask 'cyberduck'
 # cask 'dotnet-sdk'
