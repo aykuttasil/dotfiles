@@ -1,0 +1,26 @@
+[core]
+	excludesfile = /Users/aykutasil/.gitignore_global
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[user]
+	name = Aykut Asil
+	email = aykuttasil@gmail.com
+[commit]
+	template = /Users/aykutasil/.stCommitMsg
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[fetch]
+    prune = true
+[alias]
+    delete-local-merged = "!git fetch && git branch --merged | egrep -v 'master' | xargs git branch -d"
+[init]
+    defaultBranch = main
+[status]
+    short = true
