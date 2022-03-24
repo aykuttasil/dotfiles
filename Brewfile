@@ -34,6 +34,7 @@ brew 'm-cli'
 brew 'dart'
 brew 'pyenv'
 brew 'pyenv-virtualenv'
+brew 'thefuck'
 
 # cask 'visual-studio'
 cask 'visual-studio-code'

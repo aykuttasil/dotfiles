@@ -152,6 +152,10 @@ compctl -K _dotnet_zsh_complete dotnet
 # pyenv for Python
 if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init -)"; fi
 
+# The Fuck
+eval $(thefuck --alias)
+
+
 
 export PATH
 
@@ -194,3 +198,5 @@ export PATH
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+
+
