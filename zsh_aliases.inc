@@ -99,6 +99,7 @@ alias d='docker'
 alias dr='docker run --rm -i -t'
 alias dx='docker exec -i -t'
 alias db='docker build -t'
+alias rundotnetindocker='docker run --rm -it -v $(pwd):/app/ -w /app mcr.microsoft.com/dotnet/sdk:6.0 dotnet dev-certs https & dotnet run'
 
 # hmmm
 alias ffmpeg='docker run --rm -i -t -v $PWD:/tmp/workdir jrottenberg/ffmpeg'
