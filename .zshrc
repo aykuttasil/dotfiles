@@ -146,7 +146,7 @@ _dotnet_zsh_complete()
 }
 
 compctl -K _dotnet_zsh_complete dotnet
-#PATH="$PATH:$HOME/.dotnet/tools"
+PATH="$PATH:$HOME/.dotnet/tools"
 
 
 # pyenv for Python

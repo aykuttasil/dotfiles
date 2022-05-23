@@ -13,6 +13,7 @@ alias w="cd ~/workspace"
 alias a2a="cd ~/workspace/a2a"
 alias aktif="cd ~/workspace/aktif"
 alias thinkerfox="cd ~/workspace/thinkerfox"
+alias kolektif="cd ~/workspace/kolektif"
 
 # IP addresses
 alias ip="dig +short myip.opendns.com @resolver1.opendns.com"
