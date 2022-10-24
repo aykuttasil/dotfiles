@@ -56,7 +56,7 @@ function fs() {
 	if [[ -n "$@" ]]; then
 		du $arg -- "$@";
 	else
-		du $arg .[^.]* ./*;
+		du $arg .[^.]* ./\*;
 	fi;
 }
 
@@ -71,7 +71,7 @@ fi;
 # Create a data URL from a file
 function dataurl() {
 	local mimeType=$(file -b --mime-type "$1");
-	if [[ $mimeType == text/* ]]; then
+	if [[ $mimeType == text/\* ]]; then
 		mimeType="${mimeType};charset=utf-8";
 	fi
 	echo "data:${mimeType};base64,$(openssl base64 -in "$1" | tr -d '\n')";
@@ -161,4 +161,19 @@ compdef _gitignoreio gi
 # Create a new directory and enter it
 function mk() {
   mkdir -p "$@" && cd "$@"
+}
+
+function weather() {
+   city="$1"
+
+   if [ -z "$city" ]; then
+      city="Antwerp"
+   fi
+
+   eval "curl http://wttr.in/${city}"
+}
+
+# Scrape a single webpage with all assets
+function scrapeUrl() {
+    wget --adjust-extension --convert-links --page-requisites --span-hosts --no-host-directories "$1"
 }
