@@ -158,11 +158,6 @@ _gitignoreio () {
 }
 compdef _gitignoreio gi
 
-# Create a new directory and enter it
-function mk() {
-  mkdir -p "$@" && cd "$@"
-}
-
 function weather() {
    city="$1"
 
