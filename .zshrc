@@ -114,11 +114,14 @@ export ANDROID_EMULATOR="$ANDROID_HOME/emulator"
 
 PATH="$PATH:$ANDROID_PLATFORM_TOOLS:$ANDROID_TOOLS:$ANDROID_EMULATOR:$ANDROID_CMDLINE"
 
+
+# Dart
+# PATH="$PATH":"$HOME/.pub-cache/bin"
+
+
 # Flutter
 PATH="$PATH:$HOME/flutter/bin"
 
-# Dart
-PATH="$PATH":"$HOME/.pub-cache/bin"
 
 # Ruby
 #PATH="/opt/homebrew/opt/ruby/bin:$PATH"
@@ -126,10 +129,10 @@ PATH="$PATH":"$HOME/.pub-cache/bin"
 #export CPPFLAGS="-I/opt/homebrew/opt/ruby/include"
 #export PKG_CONFIG_PATH="/opt/homebrew/opt/ruby/lib/pkgconfig"
 
-if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
-  export PATH=/opt/homebrew/opt/ruby/bin:$PATH
-  export PATH=`gem environment gemdir`/bin:$PATH
-fi
+# if [ -d "/opt/homebrew/opt/ruby/bin" ]; then
+#   PATH=/opt/homebrew/opt/ruby/bin:$PATH
+#   PATH=`gem environment gemdir`/bin:$PATH
+# fi
 
 # NVM
 export NVM_DIR="$HOME/.nvm"
@@ -137,15 +140,36 @@ export NVM_DIR="$HOME/.nvm"
   [ -s "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/opt/homebrew/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 
 
+# # zsh parameter completion for the dotnet CLI
+# _dotnet_zsh_complete()
+# {
+#   local completions=("$(dotnet complete "$words")")
+
+#   reply=( "${(ps:\n:)completions}" )
+# }
+# compctl -K _dotnet_zsh_complete dotnet
+
+
 # zsh parameter completion for the dotnet CLI
-_dotnet_zsh_complete()
+
+_dotnet_zsh_complete() 
 {
   local completions=("$(dotnet complete "$words")")
 
-  reply=( "${(ps:\n:)completions}" )
+  # If the completion list is empty, just continue with filename selection
+  if [ -z "$completions" ]
+  then
+    _arguments '*::arguments: _normal'
+    return
+  fi
+
+  # This is not a variable assignment, don't remove spaces!
+  _values = "${(ps:\n:)completions}"
 }
 
-compctl -K _dotnet_zsh_complete dotnet
+compdef _dotnet_zsh_complete dotnet
+
+# compctl -K _dotnet_zsh_complete dotnet
 PATH="$PATH:$HOME/.dotnet/tools"
 
 
@@ -156,6 +180,7 @@ if command -v pyenv 1>/dev/null 2>&1; then eval "$(pyenv init -)"; fi
 eval $(thefuck --alias)
 
 
+export JAVA_HOME=$(/usr/libexec/java_home)
 
 export PATH
 
@@ -199,4 +224,9 @@ export PATH
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+
+## [Completion] 
+## Completion scripts setup. Remove the following line to uninstall
+# [[ -f /Users/aykutasil/.dart-cli-completion/zsh-config.zsh ]] && . /Users/aykutasil/.dart-cli-completion/zsh-config.zsh || true
+## [/Completion]
 
